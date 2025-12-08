@@ -1,0 +1,28 @@
+uv --version
+uv init
+uv venv
+.venv\Scripts\activate
+
+=================================================
+=================================================
+class Libro:
+    def __init__(self, titulo,autor,isbn,disponible):
+        self.titulo = titulo
+        self.autor = autor
+        self.isbn = isbn
+        self.disponible = disponible
+
+catalogo = [Libro("Cien Años de Soledad", "Gabriel García Márquez", "978-3-16-148410-0", True),
+            Libro("Don Quijote de la Mancha", "Miguel de Cervantes", "978-1-56619-909-4", False),
+            Libro("La Sombra del Viento", "Carlos Ruiz Zafón", "978-0-7432-7356-5", True)]
+
+for libro in catalogo:
+    estado = "Disponible" if libro.disponible else "No Disponible"
+    print(f"Título: {libro.titulo}, Autor: {libro.autor}, ISBN: {libro.isbn}, Estado: {estado}")
+
+==========================================================
+==========================================================
+uv add --dev ruff
+ruff check
+
+
